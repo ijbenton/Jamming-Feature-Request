@@ -1,0 +1,20 @@
+Jammming Feature Request
+October 21st 2018
+
+OBJECTIVE
+This feature will allow a user to trigger a search by pressing the enter key after typing a search term.
+BACKGROUND 
+This feature is important because it allows a user the ability to not have to click the search button and instead only use the keyboard to trigger a search. 
+This is allows a much cleaner user interface which will keep users more satisfied. It also has potential to provide an easier layout for visually impaired users. 
+If the user does not have a mouse it is much more convenient to press the enter button rather than click the search button. 
+This feature is used by most websites such as Youtube and Google for example. 
+TECHNICAL DESIGN
+We start by adding an onKeyPress event attribute to the input element inside SearchBar.js. 
+When a key is pressed the handleKeyPress method will be evaluated, taking in the event as an argument. 
+A conditional statement checks the key property of the event and sees if it matches ‘Enter’. 
+If it does, the search method will be called. This search method is the same one used when the search button is clicked.  
+The search method will then call the onSearch method from the SearchBar props and pass in the search term from the current state.
+CAVEATS
+A potential drawback for this feature is the possibility of adding a new feature that searches the search term without pressing anything. 
+This is currently how Spotify’s search bar is set up on their application. 
+I prefer triggering the search by an onClick or onKeyPress event attribute because then the application does not have to search every time you type a new character.
